@@ -2,37 +2,60 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 40px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.columns-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.column {
+  width: 50%;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.transcription-column {
+  border-right: 1px solid #444;
+  padding-right: 20px;
+}
+
+.response-column {
+  padding-left: 20px;
+  word-break: break-word; /* Force line breaks if necessary */
+}
+
+.messages-container,
+.response-container {
+  background: #333;
+  padding: 15px;
+  border-radius: 5px;
+  max-height: 70vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.messages-container p,
+.response-container p,
+.response-container pre {
+  background: #444;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 1em;
+  word-wrap: break-word; /* Break long words */
+}
+
+h2 {
+  margin-bottom: 10px;
 }
