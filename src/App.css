@@ -1,22 +1,78 @@
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #282c34;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  padding: 40px;
+.button-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: auto auto; /* Stacks the Menu/OrderSummary and Button vertically */
+  gap: 20px; /* Creates space between the rows */
+  justify-items: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
+  width: 100%; /* Ensure it takes up full width */
+}
+
+.footer {
+  /* padding: 20px; */
   color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 800;
+}
+
+.app-screen{
+  height:100vh;
+  width:100vw;
+  z-index: 900;
+}
+
+.blur {
+  filter: blur(5px);
 }
 
 .columns-container {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
+}
+
+
+  .btn-center-screen {
+    /* width: 200px; You can adjust the width as needed */
+    margin-top:40px!important;
+    justify-self: center; /* Ensure the button is centered horizontally */
+  }
+
+
+.checkout-btn {
+  position: absolute!important;
+  /* transform:translateX(-50%); */
+  bottom: 40px;
+  right:40px;
+  z-index: 900;
+  font-size: 40px!important;
 }
 
 .column {
@@ -25,37 +81,162 @@
 }
 
 .transcription-column {
-  border-right: 1px solid #444;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 .response-column {
-  padding-left: 20px;
+  padding-left: 10px;
+  padding-top:20px;
   word-break: break-word; /* Force line breaks if necessary */
+  max-height: 400px;
+  overflow-y: auto;
+  position: relative;
 }
 
 .messages-container,
 .response-container {
   background: #333;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
-  max-height: 70vh;
+  max-height: 40vh;
   overflow-y: auto;
   text-align: left;
 }
 
+.sms-failed-icon {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  z-index: 1; /* Ensure the icon is on top of other content */
+  padding: 8px; /* Optional: add some padding to move the icon slightly inward */
+}
+
+.invalidJSON{
+  background:#f00;
+}
+
+
 .messages-container p,
 .response-container p,
 .response-container pre {
-  background: #444;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  background: none;
+  padding: 0;
+  margin: 0;
   color: #fff;
   font-size: 1em;
   word-wrap: break-word; /* Break long words */
 }
 
-h2 {
+.transcription-messages p {
+  margin: 0;
+}
+
+.typing {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+h1 {
   margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+.order-summary {
+  padding: 20px;
+  color: #f0f0f0; /* Light text color */
+}
+
+.order-summary h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #e0e0e0; /* Slightly lighter than the main text for the heading */
+}
+
+.order-summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-summary li {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.order-item {
+  background: rgba(255, 255, 255, 0.1); /* Frosted glass effect (translucent) */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari blur */
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Lightly accented border */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  margin-bottom: 20px;
+}
+
+.order-item h3 {
+  font-size: 18px!important;
+  color: #f0f0f0; /* Light text */
+}
+
+.order-item p {
+  font-size: 18px;
+  color: #f0f0f0; /* Light text */
+  text-align: left;
+  line-height: 10px!important;
+}
+
+.order-summary h3 {
+  text-align: left;
+  font-size: 22px;
+  color: #e0e0e0; /* Lighter text for subtotal */
+}
+
+.order-summary strong {
+  color: #ffffff; /* Bright white for strong elements */
+}
+
+
+
+
+
+
+
+.menu-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menu-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.store-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin: 0;
+  text-align: center;
 }
