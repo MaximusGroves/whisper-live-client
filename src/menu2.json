@@ -1,0 +1,93 @@
+{
+  "burrito": {
+    "display_name": "Burrito",
+    "base_price": 8.99,
+    "toppings": {
+      "rice": { "display_name": "Rice", "price": 0.50 },
+      "beans": { "display_name": "Beans", "price": 0.50 },
+      "chicken": { "display_name": "Chicken", "price": 2.00 },
+      "beef": { "display_name": "Beef", "price": 2.50 },
+      "pork": { "display_name": "Pork", "price": 2.50 },
+      "cheddar_cheese": { "display_name": "Cheddar Cheese", "price": 1.00 },
+      "guacamole": { "display_name": "Guacamole", "price": 1.50 },
+      "sour_cream": { "display_name": "Sour Cream", "price": 1.00 },
+      "pico_de_gallo": { "display_name": "Pico de Gallo", "price": 0.50 },
+      "jalapenos": { "display_name": "Jalapeños", "price": 0.50 },
+      "vegan_cheese": { "display_name": "Vegan Cheese", "price": 1.50 },
+      "vegan_meat": { "display_name": "Vegan Meat", "price": 3.00 }
+    },
+    "without": {
+      "tortilla": { "display_name": "Tortilla", "price": -1.00 },
+      "cheese": { "display_name": "Cheese", "price": -1.00 }
+    },
+    "options": {
+      "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+    }
+  },
+  "taco": {
+    "display_name": "Taco",
+    "base_price": 3.99,
+    "toppings": {
+      "lettuce": { "display_name": "Lettuce", "price": 0.30 },
+      "tomato": { "display_name": "Tomato", "price": 0.30 },
+      "beef": { "display_name": "Beef", "price": 2.00 },
+      "chicken": { "display_name": "Chicken", "price": 2.00 },
+      "pork": { "display_name": "Pork", "price": 2.00 },
+      "sour_cream": { "display_name": "Sour Cream", "price": 0.50 },
+      "guacamole": { "display_name": "Guacamole", "price": 1.00 },
+      "jalapenos": { "display_name": "Jalapeños", "price": 0.30 },
+      "cheddar_cheese": { "display_name": "Cheddar Cheese", "price": 0.50 },
+      "vegan_cheese": { "display_name": "Vegan Cheese", "price": 1.00 }
+    },
+    "without": {
+      "shell": { "display_name": "Taco Shell", "price": -1.00 },
+      "cheese": { "display_name": "Cheese", "price": -0.50 }
+    },
+    "options": {
+      "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+    }
+  },
+  "quesadilla": {
+    "display_name": "Quesadilla",
+    "base_price": 7.99,
+    "toppings": {
+      "cheddar_cheese": { "display_name": "Cheddar Cheese", "price": 1.00 },
+      "chicken": { "display_name": "Chicken", "price": 2.00 },
+      "beef": { "display_name": "Beef", "price": 2.50 },
+      "pico_de_gallo": { "display_name": "Pico de Gallo", "price": 0.50 },
+      "guacamole": { "display_name": "Guacamole", "price": 1.50 },
+      "jalapenos": { "display_name": "Jalapeños", "price": 0.50 },
+      "sour_cream": { "display_name": "Sour Cream", "price": 1.00 },
+      "vegan_cheese": { "display_name": "Vegan Cheese", "price": 1.50 }
+    },
+    "without": {
+      "cheese": { "display_name": "Cheese", "price": -1.00 },
+      "tortilla": { "display_name": "Tortilla", "price": -1.00 }
+    },
+    "options": {
+      "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+    }
+  },
+  "nachos": {
+    "display_name": "Nachos",
+    "base_price": 6.99,
+    "toppings": {
+      "cheddar_cheese": { "display_name": "Cheddar Cheese", "price": 1.00 },
+      "beans": { "display_name": "Beans", "price": 0.50 },
+      "chicken": { "display_name": "Chicken", "price": 2.00 },
+      "beef": { "display_name": "Beef", "price": 2.50 },
+      "pico_de_gallo": { "display_name": "Pico de Gallo", "price": 0.50 },
+      "jalapenos": { "display_name": "Jalapeños", "price": 0.50 },
+      "guacamole": { "display_name": "Guacamole", "price": 1.50 },
+      "sour_cream": { "display_name": "Sour Cream", "price": 1.00 },
+      "vegan_cheese": { "display_name": "Vegan Cheese", "price": 1.50 }
+    },
+    "without": {
+      "chips": { "display_name": "Chips", "price": -1.00 },
+      "cheese": { "display_name": "Cheese", "price": -1.00 }
+    },
+    "options": {
+      "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "order":{
+
+    "hamburger": [
+      {
+        "id":1,
+        "toppings": {
+          "bacon": 4,
+          "cheddar_cheese": 4,
+          "beef_pattie": 2
+        },
+        "without":{
+          "bun":1
+        }
+      },
+      {
+        "id":2,
+        "toppings": {
+          "mustard":1,
+          "vegan_cheddar_cheese": 1
+        },
+        
+        "options": {
+          "vegan": true
+        }
+
+      }
+    ],
+
+    "grilled_cheese":[
+      {
+        "id":1
+      }
+    ]
+  },
+
+  "unknown":[
+    "apple_pie",
+    "coffee"
+  ],
+
+  "app_state":"order"
+
+}

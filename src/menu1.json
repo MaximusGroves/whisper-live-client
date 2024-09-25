@@ -1,0 +1,154 @@
+{
+    "hamburger": {
+      "display_name": "Hamburger",
+      "base_price": 7.49,
+      "toppings": {
+        "bacon": { "display_name": "Bacon", "price": 1.50 },
+        "lettuce": { "display_name": "Lettuce", "price": 0.50 },
+        "tomato": { "display_name": "Tomato", "price": 0.50 },
+        "onion": { "display_name": "Onion", "price": 0.30 },
+        "pickle": { "display_name": "Pickle", "price": 0.30 },
+        "cheddar_cheese": { "display_name": "Cheddar Cheese", "price": 1.00 },
+        "beef_pattie": { "display_name": "Beef Pattie", "price": 3.00 },
+        "vegan_beef_pattie": { "display_name": "Vegan Beef Pattie", "price": 3.50 },
+        "vegan_cheddar_cheese": { "display_name": "Vegan Cheddar Cheese", "price": 1.50 },
+        "ketchup": { "display_name": "Ketchup", "price": 0.20 },
+        "mustard": { "display_name": "Mustard", "price": 0.20 },
+        "relish": { "display_name": "Relish", "price": 0.30 },
+        "chili": { "display_name": "Chili", "price": 1.00 }
+      },
+      "without": {
+        "bun": { "display_name": "Bun", "price": -1.00 },
+        "beef_pattie": { "display_name": "Beef Pattie", "price": -3.00 }
+      },
+      "options": {
+        "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+      }
+    },
+    "hot_dog": {
+      "display_name": "Hot Dog",
+      "base_price": 4.99,
+      "toppings": {
+        "ketchup": { "display_name": "Ketchup", "price": 0.20 },
+        "mustard": { "display_name": "Mustard", "price": 0.20 },
+        "relish": { "display_name": "Relish", "price": 0.30 },
+        "onion": { "display_name": "Onion", "price": 0.30 },
+        "nacho_cheese": { "display_name": "Nacho Cheese", "price": 0.50 },
+        "vegan_nacho_cheese": { "display_name": "Vegan Nacho Cheese", "price": 1.00 },
+        "chili": { "display_name": "Chili", "price": 1.00 },
+        "vegan_hot_dog_sausage": { "display_name": "Vegan Hot Dog Sausage", "price": 2.50 }
+      },
+      "without": {
+        "bun": { "display_name": "Bun", "price": -1.00 },
+        "hot_dog_sausage": { "display_name": "Hot Dog Sausage", "price": -2.00 }
+      },
+      "options": {
+        "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+      }
+    },
+    "grilled_cheese": {
+      "display_name": "Grilled Cheese",
+      "base_price": 4.49,
+      "toppings": {
+        "american_cheese": { "display_name": "American Cheese", "price": 1.00 },
+        "cheddar_cheese": { "display_name": "Cheddar Cheese", "price": 1.00 },
+        "vegan_cheddar_cheese": { "display_name": "Vegan Cheddar Cheese", "price": 1.50 },
+        "vegan_american_cheese": { "display_name": "Vegan American Cheese", "price": 1.50 },
+        "tomato": { "display_name": "Tomato", "price": 0.50 },
+        "bacon": { "display_name": "Bacon", "price": 1.50 },
+        "vegan_bacon": { "display_name": "Vegan Bacon", "price": 1.50 }
+      },
+      "without": {
+        "bread": { "display_name": "Bread", "price": -1.00 },
+        "cheese": { "display_name": "Cheese", "price": -2.00 }
+      },
+      "options": {
+        "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+      }
+    },
+    "club_sandwich": {
+      "display_name": "Club Sandwich",
+      "base_price": 7.99,
+      "toppings": {
+        "turkey": { "display_name": "Turkey", "price": 1.50 },
+        "ham": { "display_name": "Ham", "price": 1.50 },
+        "bacon": { "display_name": "Bacon", "price": 1.50 },
+        "vegan_turkey": { "display_name": "Vegan Turkey", "price": 1.50 },
+        "vegan_ham": { "display_name": "Vegan Ham", "price": 1.50 },
+        "vegan_bacon": { "display_name": "Vegan Bacon", "price": 1.50 },
+        "lettuce": { "display_name": "Lettuce", "price": 0.50 },
+        "tomato": { "display_name": "Tomato", "price": 0.50 },
+        "mayo": { "display_name": "Mayo", "price": 0.20 },
+        "vegan_mayo": { "display_name": "Vegan Mayo", "price": 0.50 }
+      },
+      "without": {
+        "bread": { "display_name": "Bread", "price": -1.00 },
+        "turkey": { "display_name": "Turkey", "price": -1.50 },
+        "ham": { "display_name": "Ham", "price": -1.50 }
+      },
+      "options": {
+        "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+      }
+    },
+    "chicken_sandwich": {
+      "display_name": "Chicken Sandwich",
+      "base_price": 6.99,
+      "toppings": {
+        "lettuce": { "display_name": "Lettuce", "price": 0.50 },
+        "tomato": { "display_name": "Tomato", "price": 0.50 },
+        "mayo": { "display_name": "Mayo", "price": 0.20 },
+        "pickle": { "display_name": "Pickle", "price": 0.30 },
+        "cheese": { "display_name": "Cheese", "price": 1.00 },
+        "vegan_cheese": { "display_name": "Vegan Cheese", "price": 1.50 },
+        "vegan_mayo": { "display_name": "Vegan Mayo", "price": 0.50 },
+        "vegan_chicken_patty": { "display_name": "Vegan Chicken Patty", "price": 3.50 }
+      },
+      "without": {
+        "bun": { "display_name": "Bun", "price": -1.00 },
+        "chicken_breast": { "display_name": "Chicken Breast", "price": -3.00 }
+      },
+      "options": {
+        "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+      }
+    },
+    "blt_sandwich": {
+      "display_name": "B.L.T.",
+      "base_price": 5.99,
+      "toppings": {
+        "bacon": { "display_name": "Bacon", "price": 1.50 },
+        "vegan_bacon": { "display_name": "Vegan Bacon", "price": 1.50 },
+        "lettuce": { "display_name": "Lettuce", "price": 0.50 },
+        "tomato": { "display_name": "Tomato", "price": 0.50 },
+        "mayo": { "display_name": "Mayo", "price": 0.20 },
+        "vegan_mayo": { "display_name": "Vegan Mayo", "price": 0.50 }
+      },
+      "without": {
+        "bread": { "display_name": "Bread", "price": -1.00 },
+        "bacon": { "display_name": "Bacon", "price": -1.50 }
+      },
+      "options": {
+        "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+      }
+    },
+    "philly_cheesesteak": {
+      "display_name": "Philly Cheese Steak",
+      "base_price": 8.99,
+      "toppings": {
+        "onions": { "display_name": "Onions", "price": 0.30 },
+        "green_peppers": { "display_name": "Green Peppers", "price": 0.50 },
+        "mushrooms": { "display_name": "Mushrooms", "price": 0.50 },
+        "provolone_cheese": { "display_name": "Provolone Cheese", "price": 1.00 },
+        "vegan_provolone_cheese": { "display_name": "Vegan Provolone Cheese", "price": 1.50 },
+        "vegan_steak": { "display_name": "Vegan Steak", "price": 3.50 }
+      },
+      "without": {
+        "bread": { "display_name": "Bread", "price": -1.00 },
+        "steak": { "display_name": "Steak", "price": -3.00 },
+        "cheese": { "display_name": "Cheese", "price": -1.00 }
+      },
+      "options": {
+        "vegan": { "display_name": "Vegan Option", "price": 2.00 }
+      }
+    }
+  }
+  

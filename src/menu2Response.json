@@ -1,0 +1,44 @@
+{
+  "order": {
+    "burrito": [
+      {
+        "id": 1,
+        "toppings": {
+          "chicken": 1,
+          "beans": 1,
+          "guacamole": 1
+        }
+      }
+    ],
+    "taco": [
+      {
+        "id": 1,
+        "toppings": {
+          "beef": 1,
+          "cheddar_cheese": 1,
+          "guacamole": 1
+        }
+      },
+      {
+        "id": 2,
+        "toppings": {
+          "pork": 1,
+          "guacamole": 1
+        },
+        "without": {
+          "cheese": 1
+        }
+      }
+    ],
+    "nachos": [
+      {
+        "id": 1,
+        "options":{
+            "vegan":true
+        }
+      }
+    ]
+  },
+  "unknown": [],
+  "app_state": "order"
+}
