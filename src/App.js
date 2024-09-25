@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios'; // Import Axios for making HTTP requests
 import './App.css';
-import { Button } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import { SmsFailed } from '@mui/icons-material';
 
 import menu1 from './menu1.json';
@@ -9,6 +9,7 @@ import menu2 from './menu2.json';
 
 import OrderSummary from './OrderSummary';
 import MenuSelection from './MenuSelection';
+import MenuModal from './MenuModal';
 
 import { prependedMsgsMenu1, prependedMsgsMenu2 } from './prompts';
 
@@ -19,6 +20,9 @@ function App() {
   const [appRunning, setAppRunning] = useState(false);
   const [lastJsonValid, setLastJsonValid] = useState(true);
   const appRunningRef = useRef(false);
+
+  const [showData, setShowData] = useState(false);
+
 
   const cancelResetTimeoutRef = useRef();
 
@@ -149,10 +153,21 @@ function App() {
         role: 'user',
         content: msg,
       }));
-      // Add the system message at the beginning
-      const requestBody = {
-        messages: [...selectedMenu.msgs, ...messageBodies],
-      };
+
+      let requestBody;
+      if(latestResponse){
+        const lastAiResponse = {"role": "assistant", "content": JSON.stringify(latestResponse)};
+        // Add the system message at the beginning
+        requestBody = {
+          messages: [...selectedMenu.msgs, ...messageBodies],
+          // messages: [...selectedMenu.msgs, ...messageBodies, lastAiResponse],
+        };
+      } else {
+        requestBody = {
+          messages: [...selectedMenu.msgs, ...messageBodies],
+        };
+      }
+      
 
       isRequestPending.current = true;
       lastMessagesSent.current = messages;
@@ -202,7 +217,7 @@ function App() {
       ((messages.length > 0 && messagesLengthIncreased) || !lastJsonValid);
 
     if (shouldSendRequest) {
-      if (timeSinceLastRequest >= 3000) {
+      if (timeSinceLastRequest >= 1000) {
         // Send the request immediately
         if (scheduledRequestTimeout.current) {
           clearTimeout(scheduledRequestTimeout.current);
@@ -275,7 +290,7 @@ function App() {
     };
   }, [messages]);
 
-  const displayMessages = messages.slice(-5);
+  const displayMessages = messages.slice(showData ? -5 : -3);
 
   const startApp = () => {
     setAppRunning(true);
@@ -314,12 +329,16 @@ function App() {
         <div className="button-overlay">
           <div className="grid-container">
             {checkoutData ? (
-              <OrderSummary order={checkoutData?.order} menu={selectedMenu.menu} />
+              <div>
+                <img src={selectedMenu.logoUrl} alt={`${selectedMenu.storeName} Logo`} className="store-logo"/>
+                <OrderSummary order={checkoutData?.order} menu={selectedMenu.menu} />
+              </div>
             ) : (
               <MenuSelection
                 selectedMenu={selectedMenu}
                 setSelectedMenu={setSelectedMenu}
-                menuOptions={menuOptions} // Pass the array of menu options
+                menuOptions={menuOptions}
+                startApp={startApp}
               />
             )}
 
@@ -337,19 +356,21 @@ function App() {
           </div>
         </div>
       )}
-      {appRunning && selectedMenu && (
-        <img src={selectedMenu.logoUrl} alt={`${selectedMenu.storeName} Logo`} 
-        className="store-logo"/>
+      {appRunning && selectedMenu && (<div>
+        {/* <img src={selectedMenu.logoUrl} alt={`${selectedMenu.storeName} Logo`} className="store-logo"/> */}
+        <MenuModal menu={selectedMenu} startApp={undefined} imgBtn={selectedMenu.logoUrl}/>
+        </div>
         )}
       <div className={appRunning ? 'app-screen' : 'app-screen blur'}>
-        <div className="footer">
-          {latestResponse && latestResponse.order && appRunning ? (
+        <div>
+        {latestResponse && latestResponse.order && appRunning && (
             <OrderSummary order={latestResponse.order} menu={selectedMenu.menu} />
-          ) : (
-            <p>No items in the order yet.</p>
           )}
+        </div>
+        <div className="footer">
+          
 
-          <div className="columns-container">
+          <div className="columns-container" >
             <div className="column transcription-column">
               <div className="messages-container">
                 {displayMessages.length === 0 ? (
@@ -364,7 +385,7 @@ function App() {
                 )}
               </div>
             </div>
-            <div className="column response-column">
+            <div className="column response-column" style={{display: showData ? 'block' : 'none'}}>
               {!lastJsonValid && (
                 <div className="sms-failed-icon">
                   <SmsFailed />
@@ -381,9 +402,13 @@ function App() {
           </div>
         </div>
         {appRunning && (
-          <Button className="checkout-btn" variant="contained" onClick={checkout}>
-            Checkout
-          </Button>
+          <div>
+            <Button className="checkout-btn" variant="contained" onClick={checkout} style={{bottom:0, right:0}}> 
+              Checkout
+            </Button>
+            <Button onClick={()=>{setShowData(!showData)}} style={{left:0, bottom:0, position:'absolute', zIndex:2000, width:100, height:100}}></Button>
+          </div>
+          
         )}
       </div>
     </div>
